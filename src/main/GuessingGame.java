@@ -4,24 +4,24 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessingGame {
-    private int MIN;
-    private int MAX;
+    private int min;
+    private int max;
     private int magicNumber;
     private int amountOfGuesses;
 
     public GuessingGame(int min, int max) {
-    	this.MIN = min;
-    	this.MAX = max;
+    	this.min = min;
+    	this.max = max;
         this.magicNumber = this.getRandomNumberInRange();
         this.amountOfGuesses = 0;
     }
 
-    public int getMIN() {
-		return MIN;
+    public int getMin() {
+		return min;
 	}
 
-	public int getMAX() {
-		return MAX;
+	public int getMax() {
+		return max;
 	}
 
 	public int getMagicNumber() {
@@ -34,14 +34,14 @@ public class GuessingGame {
 
 	private int getRandomNumberInRange() {
         Random random = new Random();
-        return random.nextInt((this.MAX - this.MIN) + 1) + this.MIN;
+        return random.nextInt((this.max - this.min) + 1) + this.min;
     }
 	
 	public boolean reactToEnteredInteger(int number) {
 		this.amountOfGuesses++;
-        if (number > this.MAX || number < this.MIN) {
+        if (number > this.max || number < this.min) {
             System.out.println(
-                    "The number I am thinking of is in the range between " + this.MIN + " and " + this.MAX);
+                    "The number I am thinking of is in the range between " + this.min + " and " + this.max);
         } else if (number == this.magicNumber) {
             System.out.println("Congratulations! You guessed correctly! Amount of tries: " + this.amountOfGuesses);
             return true;

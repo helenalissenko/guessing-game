@@ -32,8 +32,8 @@ public class GuessingGameTest {
 	@Test
 	public void testGuessingGame() {
 		assertEquals(this.guessingGame.getAmountOfGuesses(), 0);
-		assertEquals(this.guessingGame.getMAX(), this.max);
-		assertEquals(this.guessingGame.getMIN(), this.min);
+		assertEquals(this.guessingGame.getMax(), this.max);
+		assertEquals(this.guessingGame.getMin(), this.min);
 	}
 
 	@Test
